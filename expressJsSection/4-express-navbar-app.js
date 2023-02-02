@@ -12,10 +12,10 @@ app.use(express.static('./expressJsSection/public'))
 //     res.sendFile(path.resolve(__dirname, `${fpath}/index.html`))
 // })
 
-app.get('*', (req, res) => {
-    res.status(404).send('404, resource not found.')
-})
+// app.get('*', (req, res) => {
+//     res.status(404).send('404, resource not found.')
+// })
 
-app.listen(5000, () => {
+app.listen(5001, () => {
     console.log('Server is listening on port 5000....')
 })

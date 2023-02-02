@@ -1,5 +1,4 @@
 const express = require('express');
-const { identity } = require('lodash');
 const app = express();
 const { products } = require('./data')
 
@@ -46,6 +45,8 @@ app.get('/api/V1/query', (req, res) => {
     }
     if (sortedProducts.length < 1) {
         // res.status(200).send('No products matched your search.')
+        // must return to stop express from sending multiple responses for one request
+        // will error if not
         return res.status(200).json({sucess: true, data: []})
     }
     res.status(200).json(sortedProducts)
